@@ -1,0 +1,2 @@
+module PortfolioResHelper
+end
