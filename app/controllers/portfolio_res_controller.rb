@@ -16,4 +16,17 @@ class PortfolioResController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @portfolio_item = PortfolioRe.find(params[:id])
+  end
+
+  def update
+    @portfolio_item = PortfolioRe.find(params[:id])
+    if @portfolio_item.update(params.require(:portfolio_re).permit(:title, :subtitle, :body))
+      redirect_to portfolio_res_path
+    else
+      render :edit
+    end
+  end
 end
