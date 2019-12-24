@@ -33,4 +33,10 @@ class PortfolioResController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @portfolio_item = PortfolioRe.find(params[:id])
+    @portfolio_item.destroy
+    redirect_to portfolio_res_path, notice: "Record was removed!"
+  end
 end
