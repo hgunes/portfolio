@@ -3,6 +3,10 @@ class PortfolioResController < ApplicationController
     @portfolio_items = PortfolioRe.all
   end
 
+  def show
+    @portfolio_item = PortfolioRe.find(params[:id])
+  end
+
   def new
     @portfolio_item = PortfolioRe.new
   end
