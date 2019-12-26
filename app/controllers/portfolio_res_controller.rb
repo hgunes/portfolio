@@ -1,6 +1,14 @@
 class PortfolioResController < ApplicationController
   def index
     @portfolio_items = PortfolioRe.all
+
+    # custom scopes
+    # @portfolio_items = PortfolioRe.angular
+    # @portfolio_items = PortfolioRe.ruby_on_rails_portfolio_items
+  end
+
+  def angular
+    @angular_portfolio_items = PortfolioRe.angular
   end
 
   def show
