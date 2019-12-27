@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to:'pages#about'
   get 'contact', to: 'pages#contact'
+
+  get 'angular-items', to: 'portfolio_res#angular'
   
   resources :blogs do
     member do
