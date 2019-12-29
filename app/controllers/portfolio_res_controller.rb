@@ -21,7 +21,7 @@ class PortfolioResController < ApplicationController
   end
 
   def create
-    @portfolio_item = PortfolioRe.new(params.require(:portfolio_re).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+    @portfolio_item = PortfolioRe.new(portfolio_params)
 
     if @portfolio_item.save
       redirect_to portfolio_res_path
@@ -36,7 +36,7 @@ class PortfolioResController < ApplicationController
 
   def update
     @portfolio_item = PortfolioRe.find(params[:id])
-    if @portfolio_item.update(params.require(:portfolio_re).permit(:title, :subtitle, :body))
+    if @portfolio_item.update(portfolio_params)
       redirect_to portfolio_res_path
     else
       render :edit
@@ -47,5 +47,13 @@ class PortfolioResController < ApplicationController
     @portfolio_item = PortfolioRe.find(params[:id])
     @portfolio_item.destroy
     redirect_to portfolio_res_path, notice: "Record was removed!"
+  end
+
+  private
+  def portfolio_params
+    params.require(:portfolio_re).permit(:title, 
+                                         :subtitle, 
+                                         :body, 
+                                         technologies_attributes: [:name])
   end
 end
