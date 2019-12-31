@@ -1,5 +1,5 @@
 module SetSource
-  extend ActiceSupport::Concern
+  extend ActiveSupport::Concern
 
   included do
     before_action :set_source
