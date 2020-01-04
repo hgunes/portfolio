@@ -11,10 +11,11 @@
       <th colspan="4"></th>
     </tr>
   </thead>
-
-  <tbody>
-    <%= render @blogs %>
-  </tbody>
+  <% cache do %>
+    <tbody>
+      <%= render @blogs %>
+    </tbody>
+  <% end %>
 </table>
 
 <br>

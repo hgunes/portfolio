@@ -1,4 +1,5 @@
 class PortfolioResController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
   
   def index
@@ -14,7 +15,6 @@ class PortfolioResController < ApplicationController
   end
 
   def show
-    @portfolio_item = PortfolioRe.find(params[:id])
   end
 
   def new
@@ -33,11 +33,9 @@ class PortfolioResController < ApplicationController
   end
 
   def edit
-    @portfolio_item = PortfolioRe.find(params[:id])
   end
 
   def update
-    @portfolio_item = PortfolioRe.find(params[:id])
     if @portfolio_item.update(portfolio_params)
       redirect_to portfolio_res_path
     else
@@ -46,7 +44,6 @@ class PortfolioResController < ApplicationController
   end
 
   def destroy
-    @portfolio_item = PortfolioRe.find(params[:id])
     @portfolio_item.destroy
     redirect_to portfolio_res_path, notice: "Record was removed!"
   end
@@ -57,5 +54,9 @@ class PortfolioResController < ApplicationController
                                          :subtitle, 
                                          :body, 
                                          technologies_attributes: [:name])
+  end
+
+  def set_portfolio_item
+    @portfolio_item = PortfolioRe.find(params[:id])
   end
 end
