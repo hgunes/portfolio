@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/harungunes/coprght
+  revision: 96f9ace2338093109e624c2aa18fb3e0357e2579
+  specs:
+    coprght (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -238,6 +244,7 @@ DEPENDENCIES
   bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
+  coprght!
   devise (~> 4.7, >= 4.7.1)
   friendly_id (~> 5.3)
   jbuilder (~> 2.7)
