@@ -11,7 +11,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="text-center">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
       <header class="masthead mb-auto">
@@ -19,19 +19,12 @@
           <%= render 'shared/application_nav' %>
         </div>
       </header>
-
-      <%= login_helper %>
       
       <%= yield %>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <%= copyright_generator %>
-        </div>
-      </footer>
-      
+      <%= render 'shared/application_footer' %>
+
       <%= source_helper %>
-    
     </div>
   </body>
 </html>
