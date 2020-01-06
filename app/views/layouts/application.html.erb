@@ -11,19 +11,27 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
-    <%= render 'shared/nav', location: 'top' %>
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <%= render 'shared/application_nav' %>
+        </div>
+      </header>
+
+      <%= login_helper %>
+      
+      <%= yield %>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <%= copyright_generator %>
+        </div>
+      </footer>
+      
+      <%= source_helper %>
     
-    <%= login_helper %>
-    
-    <%= yield %>
-
-    <p><%= copyright_generator %></p>
-
-    <%= source_helper %>
+    </div>
   </body>
 </html>
