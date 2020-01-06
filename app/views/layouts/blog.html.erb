@@ -21,21 +21,22 @@
   <div class="blog-header">
     <div class="container">
     <h1 class="blog-title">Blog</h1>
-    <p class="lead blog-description">Example text</p>
+    <p class="lead blog-description">This is my personal blog that I publish my thoughts</p>
+    <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
     </div>
+    <br />
   </div>
   <%# end blog header %>
 
   <%# start of container and row elements %>
   <div class="container">
     <div class="row">
-
-      <%= login_helper %>
       
       <%= yield %>
-
+    
       <%# start of aside %>
       <aside class="col-md-4 blog-sidebar">
+      <br />
         <div class="p-3 mb-3 bg-light rounded">
           <h4 class="font-italic">About</h4>
           <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -68,25 +69,16 @@
           </ol>
         </div>
       </aside>
+    </div>
       <%# end of aside %>
-
+  </div><%# end of row %>
       <footer class="blog-footer">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-          <a href="#">Back to top</a>
-        </p>
-    </footer>
+        <p><%= copyright_generator %></p>
 
-      <%= render 'shared/nav', location: 'bottom' %>
+      </footer>
 
       <%= source_helper %>
-    </div>
-  </div>
 
   <%# end of container and row elements %>
-
-
-
-    
   </body>
 </html>
