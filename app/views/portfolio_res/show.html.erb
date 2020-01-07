@@ -1,9 +1,16 @@
-<%= image_tag @portfolio_item.main_image %>
-<h1><%= @portfolio_item.title %></h1>
-<em><%= @portfolio_item.subtitle %></em>
-<p><%= @portfolio_item.body %></p>
-
-<h2>Tech stack</h2>
-<% @portfolio_item.technologies.each do |tech| %>
-<p><%= tech.name %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-7">
+    <%= image_tag @portfolio_item.main_image %>
+  </div>
+  <div class="col-md-5">
+    <h1><%= @portfolio_item.title %></h1>
+    <em><%= @portfolio_item.subtitle %></em>
+    <p><%= @portfolio_item.body %></p>
+    <hr>
+    <h2>Tech stack</h2>
+    <% @portfolio_item.technologies.each do |tech| %>
+    <p><%= tech.name %></p>
+    <% end %>
+    <%= link_to "View all portfolio items", portfolio_res_path %>
+  </div>
+</div>
