@@ -12,7 +12,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="p-3">
+  <body class="padding-blog">
   <%# start nav %>
     <%= render 'shared/blog_nav' %>
   <%# end nav %>
@@ -26,22 +26,17 @@
     </div>
     <br />
   </div>
-  <%# end blog header %>
 
-  <%# start of container and row elements %>
   <div class="container">
     <div class="row">
       <%= yield %>
-    
-      <%# start of aside %>
-      
       <%= render 'shared/blog_sidebar' %>
     </div>
-      <%# end of aside %>
-  </div><%# end of row %>
-      <footer class="blog-footer">
-        <p><%= copyright_generator %></p>
-        <%= source_helper %>
-      </footer>
+
+  </div>
+  <footer class="blog-footer">
+    <p><%= copyright_generator %></p>
+  </footer>
+    <%= source_helper %>
   </body>
 </html>
