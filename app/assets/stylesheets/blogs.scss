@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import 'font-awesome';
 
 /* stylelint-disable selector-list-comma-newline-after */
 
@@ -135,4 +136,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   width: 60rem;
+}
+
+.social-links{
+  display: flex;
+  flex-direction: row;
+  li a{
+    padding-right: 0.75rem;
+    color: #333;
+    font-size: 2.5rem;
+  }
 }
