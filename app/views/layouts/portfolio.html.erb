@@ -17,14 +17,9 @@
       <div class="wrapper">
       <%= render 'shared/blog_nav' %>
       <section class="p-3 text-center">
-        <div class="container">
-          <h1 class="p-3">My portfolio</h1>
-          <p class="lead text-muted">In this section I have published the apps that I created.</p>
-
-            <%= link_to 'Home', root_path, class: 'btn btn-primary my-2' %>
-            <%= link_to 'Contact', contact_path, class: 'btn btn-secondary my-2' %>
-
-        </div>
+          <div class="container">
+            <%= render 'shared/portfolio_showcase' unless logged_in?(:site_admin)%>
+          </div>
       </section>
       <%= yield %>
 
