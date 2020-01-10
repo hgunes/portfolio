@@ -7,9 +7,6 @@
 
  $main-text-color: rgb(202, 189, 189);
 
-body {
-  font-family: 'Lato', sans-serif;
-}
 /* Links */
 a,
 a:focus,
@@ -35,7 +32,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -167,4 +164,19 @@ main .social-links{
     color: $main-text-color;
     font-size: 2rem;
   }
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('home_bg.png') no-repeat;
+  background-size: cover;
 }
