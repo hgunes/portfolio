@@ -1,8 +1,11 @@
 @import "bootstrap";
+@import 'font-awesome';
 
 /*
  * Globals
  */
+
+ $main-text-color: rgb(202, 189, 189);
 
 body {
   font-family: 'Lato', sans-serif;
@@ -134,4 +137,34 @@ body {
   width: 22rem;
   margin: 0 auto;
   float: none;
+}
+
+
+main{
+  color: $main-text-color;
+
+  .home{
+    text-align: left;
+  }
+  .lead {
+    text-align: left;
+  }
+  .cover-heading {
+    text-align: left;
+  }
+  .left-aligned{
+    text-align: left;
+    padding-left: 3rem;
+  }
+}
+
+main .social-links{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  li a{
+    padding-right: 0.75rem;
+    color: $main-text-color;
+    font-size: 2rem;
+  }
 }
