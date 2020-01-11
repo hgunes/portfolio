@@ -1,5 +1,5 @@
 <div class="cardy">
-  <%= image_tag portfolio_item.thumb_image.to_s unless portfolio_item.thumb_image.nil? %>
+  <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), class: 'card-img-top' %>
   <div class="card-body">
     <h5 class="card-text"><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %></h5>
     <div class="">
