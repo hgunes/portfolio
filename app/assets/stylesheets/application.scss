@@ -1,12 +1,12 @@
 @import "bootstrap";
+@import 'font-awesome';
 
 /*
  * Globals
  */
 
-body {
-  font-family: 'Lato', sans-serif;
-}
+ $main-text-color: rgb(202, 189, 189);
+
 /* Links */
 a,
 a:focus,
@@ -32,7 +32,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -48,7 +48,7 @@ body {
 }
 
 .cover-container {
-  width: 60rem;
+  width: 50rem;
 }
 
 
@@ -134,4 +134,49 @@ body {
   width: 22rem;
   margin: 0 auto;
   float: none;
+}
+
+
+main{
+  color: $main-text-color;
+
+  .home{
+    text-align: left;
+  }
+  .lead {
+    text-align: left;
+  }
+  .cover-heading {
+    text-align: left;
+  }
+  .left-aligned{
+    text-align: left;
+    padding-left: 5rem;
+  }
+}
+
+main .social-links{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  li a{
+    padding-right: 0.75rem;
+    color: $main-text-color;
+    font-size: 2rem;
+  }
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('dark-background.jpeg') no-repeat;
+  background-size: cover;
 }

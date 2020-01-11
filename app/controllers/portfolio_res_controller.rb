@@ -4,7 +4,7 @@ class PortfolioResController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
-    @portfolio_items = PortfolioRe.all
+    @portfolio_items = PortfolioRe.order('created_at DESC')
 
     # custom scopes
     # @portfolio_items = PortfolioRe.angular
@@ -54,6 +54,8 @@ class PortfolioResController < ApplicationController
     params.require(:portfolio_re).permit(:title, 
                                          :subtitle, 
                                          :body, 
+                                         :thumb_image,
+                                         :main_image,
                                          technologies_attributes: [:name])
   end
 
