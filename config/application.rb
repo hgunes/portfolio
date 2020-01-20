@@ -12,5 +12,6 @@ module Portfolio
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     # config.action_controller.permit_all_parameters = true
+    config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
